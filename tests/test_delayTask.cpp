@@ -27,7 +27,7 @@ int main() {
     Ticker ticker0;
     int nextDelay0 = 50;
     std::shared_ptr<onceToken> token0 = std::make_shared<onceToken>(nullptr,[](){
-        TraceL << "task 0 被取消，可以立即触发释放lambad表达式捕获的变量!";
+        TraceL << "task 0 被取消,可以立即触发释放lambad表达式捕获的变量!";
     });
     auto tag0 = EventPollerPool::Instance().getPoller()->doDelayTask(nextDelay0, [&,token0]() {
         TraceL << "task 0(固定延时重复任务),预期休眠时间 :" << nextDelay0 << " 实际休眠时间" << ticker0.elapsedTime();
